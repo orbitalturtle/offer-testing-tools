@@ -13,10 +13,8 @@ To use this .zip:
 * Load the zip into Polar.
 * Click the network and click "start" to get the network running.
 
-Note: One problem with this setup right now is [this bug](https://github.com/jamaljsr/polar/issues/747). Even though the channels are set up in the test network, when the network is first booted up or restarted, the connections to each CLN peer might be disrupted. You might need to reestablish connections between each node with `lightning-cli connect`. The trick here because of this bug is that you don't want to "localhost" as the "connect" options seem to suggest. You'll want to use `lightning-cli getinfo` to get the correct address. It'll look something like `172.26.0.4`.
-
-I can write out more detailed instructions if anyone would find this helpful. 
+Note: One problem with this setup right now is [this bug](https://github.com/jamaljsr/polar/issues/747). Even though the channels are set up in the test network, when the network is first booted up or restarted, the connections to each CLN peer might be disrupted. You might need to reestablish connections between each node with `lightning-cli connect`. The trick here because of this bug is that you don't want to "localhost" as the "connect" options seem to suggest. You'll want to use `lightning-cli getinfo` to get the correct address. It'll look something like `172.26.0.4`. (I can write out more detailed instructions if anyone would find this helpful.)
 
 ### Contact
 
-I'm happy to help or answer any questions. Shoot me an email.
+I'm happy to help or answer any questions. Report an issue or shoot me an email.
