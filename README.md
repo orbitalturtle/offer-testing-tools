@@ -1,12 +1,26 @@
 This repository houses a couple little tools with the aim of testing CLN-LND route blinding interoperability.
 
-### Polar network .zip
+### Script
+
+After making a test network in "Steps to Test - CLN" outlined in [this pr](https://github.com/lightningnetwork/lnd/pull/7267), users can use the `lnd-sendtoroute` script to automate making a full blinded payment.
+
+With this network set up, we can use the `lnd-sendtoroute` script to automate generating a route with lnd and then sending a payment.
+
+There's just a couple of steps:
+- First you'll need `Dave` to generate an offer.
+- Then you should be able to execute the script with the following arguments to automatically find a full route to the offer, and send the payment:
+
+```
+./lnd-sendtoroute.sh <LNOFFER> <CAROL'S_LIGHTNINGD_DIR> <GRACE'S RPC_ENDPOINT> <GRACES_LNDDIR>
+```
+
+### WIP: Setup a polar network
 
 These tools aim to make the "Steps to Test - CLN" outlined in [this pr](https://github.com/lightningnetwork/lnd/pull/7267) a bit easier to manage.
 
-The `blinded-routes.polar.zip` can be used in Polar, a tool for quickly setting up Lightning Network test networks, to quickly set up a test network specifically for testing interoperability.
+The `blinded-routes.polar.zip` can be used in Polar, a tool for quickly setting up Lightning Network test networks, to quickly set up a regtest network specifically for testing interoperability.
 
-This .zip holds one LND node and three CLN nodes connected together by channels, as specified in the instructions in the linked PR above.
+This .zip holds one LND node and three CLN nodes connected together by channels, as specified in the instructions in the linked PR above. The LND node is an image at the needed version. The CLN nodes all are running the experimental flags needed to 
 
 To use this .zip:
 * Open Polar and click "import network" in the upper right corner.
